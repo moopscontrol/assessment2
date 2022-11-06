@@ -12,6 +12,14 @@ public class Main {
         System.out.println("The difference is >>> " + (a-b));
     }
 
+    static void mul(double a, double b) {
+        System.out.println("The product is >>> " + (a*b));
+    }
+
+    static void div(double a, double b) {
+        System.out.println("The quotient is >>> " + (a/b));
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -24,5 +32,7 @@ public class Main {
 
         sum(a, b);
         diff(a, b);
+        mul(a, b);
+        div(a, b);
     }
 }
