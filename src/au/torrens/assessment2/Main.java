@@ -21,6 +21,24 @@ public class Main {
         return val;
     }
 
+    static int menu() {
+        int opt = -1;
+
+        while (opt < 0 || opt > 4) {
+            System.out.println("Select one of the following operations");
+            System.out.println("1. Add");
+            System.out.println("2. Substract");
+            System.out.println("3. Multiply");
+            System.out.println("4. Divide");
+            System.out.println("0. Exit");
+
+            opt = (int) input("Enter your choice >>> ");
+        }
+
+        return opt;
+    }
+
+
     static void sum(double a, double b) {
         System.out.println("The sum is >>> " + (a+b));
     }
@@ -40,12 +58,31 @@ public class Main {
     public static void main(String[] args) {
 
 	    System.out.println("Simple Calculator");
-        double a = input("Enter a number >>>");
-        double b = input("Enter another number >>>");
 
-        sum(a, b);
-        diff(a, b);
-        mul(a, b);
-        div(a, b);
+        boolean run = true;
+
+        while(run) {
+            double a = input("Enter a number >>>");
+            double b = input("Enter another number >>>");
+            int opt = menu();
+            switch (opt) {
+                case 1:
+                    sum(a, b);
+                    break;
+                case 2:
+                    diff(a, b);
+                    break;
+                case 3:
+                    mul(a, b);
+                    break;
+                case 4:
+                    div(a, b);
+                    break;
+                case 0:
+                    run = false;
+                    break;
+            }
+        }
+        System.out.println("Goodbye!");
     }
 }
